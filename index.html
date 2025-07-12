@@ -3,25 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wynn Pitch</title>
-  <!-- React and Babel CDN -->
-  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <title>Wynn IB Pitch</title>
+
+  <!-- Load React & Babel for GitHub Pages -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://cdn.jsdelivr.net/npm/recharts/umd/Recharts.min.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    h1 { font-size: 2rem; margin-bottom: 1rem; }
-    h2 { margin-top: 40px; }
-    #root { width: 100%; max-width: 800px; margin: auto; }
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    #root {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
   <h1>Investment Banking Pitch: Wynn Resorts</h1>
   <div id="root"></div>
 
-  <!-- Babel JSX Script -->
+  <!-- Your React JSX Code -->
   <script type="text/babel">
     const {
       LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
@@ -52,13 +62,13 @@
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="revenue" stroke="#8884d8" name="Revenue ($M)" />
-              <Line type="monotone" dataKey="ebitda" stroke="#82ca9d" name="EBITDA ($M)" />
-              <Line type="monotone" dataKey="netIncome" stroke="#ffc658" name="Net Income ($M)" />
+              <Line type="monotone" dataKey="revenue" stroke="#007bff" />
+              <Line type="monotone" dataKey="ebitda" stroke="#28a745" />
+              <Line type="monotone" dataKey="netIncome" stroke="#ffc107" />
             </LineChart>
           </ResponsiveContainer>
 
-          <h2>Valuation Multiples Comparison</h2>
+          <h2>Valuation Multiples</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={valuation} layout="vertical">
               <CartesianGrid strokeDasharray="3 3" />
@@ -66,9 +76,9 @@
               <YAxis dataKey="metric" type="category" />
               <Tooltip />
               <Legend />
-              <Bar dataKey="wynn" fill="#007aff" name="Wynn" />
-              <Bar dataKey="mgm" fill="#34c759" name="MGM" />
-              <Bar dataKey="lvs" fill="#ff3b30" name="Las Vegas Sands" />
+              <Bar dataKey="wynn" fill="#007bff" name="Wynn" />
+              <Bar dataKey="mgm" fill="#28a745" name="MGM" />
+              <Bar dataKey="lvs" fill="#dc3545" name="LVS" />
             </BarChart>
           </ResponsiveContainer>
         </div>
